@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/custom.css' %}"/>
+
+
+
+</head>
+<body class="h-screen flex flex-col">
+  <div >
+    {% include "components/header.html" %}
+  </div>
+  
+    <main class="bg-white flex-grow">
+{% block content %}
+        
+{% endblock content %}
+    </main>
+    <footer>
+        {% include "components/footer.html" %}
+
+    </footer>
+
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %} 
+   
+
+<section>
+  <div class="bg-white mt-16">
+       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"> Main Services
+        </h2>
+
+       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+           {% for service in object_list %}
+
+           <div class="border flex flex-col justify-center items-center py-3 gap-4 rounded-lg hover:">
+               <div class="px-5 py-1 rounded-full">
+                   {{service.title}}
+               </div>
+               <img class="h-40 w-40  rounded-full" src="{{ service.image.url }}"alt="">
+               <div class="mx-2 border rounded-lg px-4 py-3 ">
+                       {{ service.desc }}
+               </div>
+           </div>
+           {% endfor %}
+           </div>
+   </div>
+</div>
+
+</section>
+{% endblock %}
